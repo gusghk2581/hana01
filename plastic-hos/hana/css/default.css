@@ -1,0 +1,122 @@
+@charset 'utf-8';
+/* thin 100 */
+@font-face {font-family:'nskr';src:url(./fonts/Noto_Sans_KR/NotoSansKR-Thin.otf);font-weight:100;}
+/* light 300 */
+@font-face {font-family:'nskr';src:url(./fonts/Noto_Sans_KR/NotoSansKR-Light.otf);font-weight:300;}
+/* regular 400 */
+@font-face {font-family:'nskr';src:url(./fonts/Noto_Sans_KR/NotoSansKR-Regular.otf);font-weight:400;}
+/* medium 500 */
+@font-face {font-family:'nskr';src:url(./fonts/Noto_Sans_KR/NotoSansKR-Medium.otf);font-weight:500;}
+/* bold 700 */
+@font-face {font-family:'nskr';src:url(./fonts/Noto_Sans_KR/NotoSansKR-Bold.otf);font-weight:700;}
+/* black 900 */
+@font-face { font-family:'nskr';src:url(./fonts/Noto_Sans_KR/NotoSansKR-Black.otf);font-weight:900;}
+/* courgette 400 */
+@font-face{font-family:'cg';src:url(./fonts/Courgette/Courgette-Regular.ttf);font-weight:400;}
+:root{
+    font-family:'nskr',sans-serif;
+    font-weight:400;
+    font-size:16px;
+    color:#0e0219;
+    line-height:1;
+}
+#wrap{
+    width:100%;
+    overflow:hidden;
+}
+.container,.f-container{
+    width:100%;
+    max-width:1280px;
+    margin:0 auto;
+    padding:0 22px;
+}
+.f-container{
+    padding-right:0;
+}
+.grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    column-gap:20px;
+}
+.hide{display:none;}
+#header{
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    background:#fff;
+    z-index:20;
+}
+#header .grid{
+    align-items:center;
+    height:100px;
+}
+h1{
+    grid-column:2/4;
+    order:2;
+    text-align:center;
+}
+h1 span{display:none;}
+h1 img{
+    width:64px;
+}
+nav{
+    display:none;
+    position:absolute;
+    left:0;
+    right:0;
+    top:100px;
+    z-index:100;
+}
+nav.active{
+    display:block;
+}
+nav ul{
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content:space-evenly;
+    align-items:center;
+    height:calc(100vh - 100px);
+    font-size:14px;
+    background:#361656;
+    color:#fff;
+}
+.lang{
+    grid-column:1/2;
+    order:1;
+    display:flex;
+}
+.lang select{
+    border:none;
+    font-size:14px;
+    order:2;
+}
+.lang .img-box{
+    display:none;
+    width:27px;
+    order:1;
+}
+.btn-nav{
+    grid-column:4/5;
+    order:3;
+    width:27px;
+    height:18px;
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content:space-between;
+    justify-self:right;
+    cursor:pointer;
+}
+.btn-nav::before,.btn-nav::after{
+    content:'';
+    display:block;
+    width:100%;
+    height:2px;
+    background:#361656;
+}
+.btn-nav span{
+    width:27px;
+    height:2px;
+    background:#361656;
+    text-indent:-9999px;
+}
